@@ -44,7 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
         result = (firstnuum * secondnum).toString();
       }
     } else {
-      result = int.parse(textToDisplay + btnvalue).toString();
+      try {
+        result = int.parse(textToDisplay + btnvalue).toString();
+      } catch (e) {
+        print(e);
+      }
     }
     setState(() {
       textToDisplay = result;
